@@ -30,21 +30,24 @@ const Calculator = {
 
 function actionApplyer(startInt, arr) {
   // FUNCTION DEFINITIONS
-  function first(num) {
-    return num * 2
-  }
-  function second(num) {
-    return num + 1000
-  }
-  function third(num) {
-    return num % 7
-  }
+
   // ====================================
   // ====================================
 
   // immediately exit if array is empty
   if (arr.length === 0) return startInt
 
-  return third(second(first(startInt)))
-
+  let res = startInt
+  arr.forEach((fn) => {
+    res = fn(res)
+  })
+  return res
 }
+
+const arrayOfTransforms = [
+          function(a){ return a * 2 },
+          function(a){ return a + 1000},
+          function(a){ return a % 7 }
+        ]
+
+actionApplyer(13, arrayOfTransforms)
