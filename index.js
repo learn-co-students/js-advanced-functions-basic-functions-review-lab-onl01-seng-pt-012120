@@ -23,8 +23,7 @@ const actionApplyer = function(int, arr) {
     if (arr.length != 0) {
         let result = int;
         for (let i=0; i < arr.length; i++) {
-            let fn = arr[i];
-            result = fn(result);
+            result = arr[i](result);
         };
         return result
     } else {
