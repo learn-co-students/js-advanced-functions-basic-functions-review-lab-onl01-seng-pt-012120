@@ -20,13 +20,9 @@ const Calculator = {
 }
 
 const actionApplyer = function(int, arr) {
-    if (arr.length != 0) {
-        let result = int;
-        for (let i=0; i < arr.length; i++) {
-            result = arr[i](result);
-        };
-        return result
-    } else {
-        return int
-    }
+    let result = int;
+    for (let i=0; i < arr.length; i++) {
+        result = arr[i](result)
+    };
+    return result
 }
