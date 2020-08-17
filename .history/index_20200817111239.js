@@ -28,9 +28,6 @@ Calculator.divide = (num1, num2) => {
     return num1 / num2;
 };
 
-let actionApplyer = (startInt=0,functionArray) => {
-    for (const func of functionArray) {
-        startInt = func(startInt);
-    };
-    return startInt;
+let actionApplyer = (startInt,functionArray) => {
+    
 };
